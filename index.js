@@ -2,13 +2,12 @@
  * SOAL NO. 1
  */
 
-
 /**
  * SMA Maju Mundur mengadakan ujian matematika, dan didapatkan nilai-nilai ujian
  * siswanya dengan data sebagai berikut
- * 
+ *
  * Nama; kelas; nilai
- * 
+ *
  * Andi; 12-IPA-A; 90
  * Dila; 12-IPA-A; 35
  * Udin; 12-IPA-A; 67
@@ -18,41 +17,38 @@
  * Farah; 12-IPA-C; 76
  * Dini; 12-IPA-C; 81
  * Dina; 12-IPA-C; 87
- * 
- * 
+ *
+ *
  */
-
 
 /**
- * 
+ *
  * Ubahlah data nilai di atas menjadi sebuah array of object, di mana terdapat pengelompokkan per kelasnya.
  * Hasil disimpan di nilai_student
- * 
+ *
  */
-
 
 let nilai_student;
 
 nilai_student = [
-  {nama : 'Andi', kelas: '12-IPA-A' , nilai : 90},
-  {nama : 'Dila', kelas: '12-IPA-A' , nilai : 35},
-  {nama : 'Udin', kelas: '12-IPA-A' , nilai : 67},
-  {nama : 'Nina', kelas: '12-IPA-B' , nilai : 80},
-  {nama : 'Nani', kelas: '12-IPA-B' , nilai : 73},
-  {nama : 'Jali', kelas: '12-IPA-B' , nilai : 98},
-  {nama : 'Farah', kelas: '12-IPA-C' , nilai : 76},
-  {nama : 'Dini', kelas: '12-IPA-C' , nilai : 81},
-  {nama : 'Dina', kelas: '12-IPA-C' , nilai : 87},
-]
+  { nama: "Andi", kelas: "12-IPA-A", nilai: 90 },
+  { nama: "Dila", kelas: "12-IPA-A", nilai: 35 },
+  { nama: "Udin", kelas: "12-IPA-A", nilai: 67 },
+  { nama: "Nina", kelas: "12-IPA-B", nilai: 80 },
+  { nama: "Nani", kelas: "12-IPA-B", nilai: 73 },
+  { nama: "Jali", kelas: "12-IPA-B", nilai: 98 },
+  { nama: "Farah", kelas: "12-IPA-C", nilai: 76 },
+  { nama: "Dini", kelas: "12-IPA-C", nilai: 81 },
+  { nama: "Dina", kelas: "12-IPA-C", nilai: 87 },
+];
 
-console.log(nilai_student)
-
+console.log(nilai_student);
 
 /**
- * 
+ *
  * Nilai minimal untuk bisa lulus pelajaran matermatika adalah 70, tentukan siswa mana saja
  * pada masing-masing kelas yang tidak lulus pelajaran matematika
- * 
+ *
  */
 
 // Filter by class
@@ -60,25 +56,20 @@ let kelasA = nilai_student.filter((student) => student.kelas === "12-IPA-A");
 let kelasB = nilai_student.filter((student) => student.kelas === "12-IPA-B");
 let kelasC = nilai_student.filter((student) => student.kelas === "12-IPA-C");
 
-
 let student_tidak_lulus_kelas_A;
 student_tidak_lulus_kelas_A = kelasA.filter((student) => student.nilai <= 70);
 
 let student_tidak_lulus_kelas_B;
-student_tidak_lulus_kelas_B = kelasB.filter(
-  (student) =>  student.nilai <= 70
-);
+student_tidak_lulus_kelas_B = kelasB.filter((student) => student.nilai <= 70);
 
 let student_tidak_lulus_kelas_C;
-student_tidak_lulus_kelas_C = kelasC.filter(
-  (student) =>  student.nilai <= 70
-);
+student_tidak_lulus_kelas_C = kelasC.filter((student) => student.nilai <= 70);
 
 /**
- * 
+ *
  * Hitung nilai rata-rata per kelas
- * 
- * 
+ *
+ *
  */
 
 let rata_rata_kelas_A;
@@ -88,11 +79,8 @@ let rata_rata_kelas_B;
 rata_rata_kelas_B =
   kelasB.reduce((prev, curr) => prev + curr.nilai, 0) / kelasA.length;
 let rata_rata_kelas_C;
-
 rata_rata_kelas_C =
   kelasC.reduce((prev, curr) => prev + curr.nilai, 0) / kelasC.length;
- 
-
 
 /**
  * SOAL NO.2
@@ -390,13 +378,13 @@ const users = [{
 
 
 // Nama company dari Glenna Reichert
-console.log(users[8]["company"]["name"]) // lengkapi
+console.log(users[8]["company"]["name"]); // lengkapi
 
 // Aktivitas tidak produktif Ervin Howell yang dilakukan tiap Jumat
-console.log(users[1]["activities"][1]["activities"][2]["name"])
+console.log(users[1]["activities"][1]["activities"][2]["name"]);
 
 // Zipcode dari Ervin Howell
-console.log(users[1]["address"]["zipcode"])
+console.log(users[1]["address"]["zipcode"]);
 
 // Leanne Graham melakukan coding setiap hari apa?
 console.log(users[0]["activities"][0]["activities"][1]["day"]);
@@ -407,17 +395,15 @@ console.log(
   users[2]["address"]["geo"]["lng"]
 );
 
-
-
 /**
  * SOAL NO. 3
  */
 
-
 /**
- * Lengkapi function untuk mengkonversi detik menjadi menit 
+ * Lengkapi function untuk mengkonversi detik menjadi menit
  */
 
+function convertTime(seconds) {}
 
 function convertTime(seconds) {
   let menit = Math.floor(seconds/60)
@@ -436,7 +422,6 @@ console.log(convertTime(153)) // expected output: 02:33
 /**
  * SOAL NO.4
  */
-
 
 /**
  * Lengkapilah function berikut untuk menampilkan 'Aku suka buah ...'
@@ -460,12 +445,9 @@ console.log(iLoveFruit('Banana'))
  * I love Banana
  */
 
-
-
 /**
  * SOAL NO. 5
  */
-
 
 /**
  * Lengkapi function untuk menghilangkan nama buah-buahan yang dimulai dengan huruf A
@@ -484,35 +466,26 @@ console.log(removeFruitStartWithALetter(["Mengkudu", "Pisang"])) // expected out
  * sample output: ["Orange", "Banana"]
  */
 
-
-
 /**
  * SOAL NO. 6
  */
-
 
 /**
  * Lengkapi function berikut untuk menjumlahkan semua elemen dalam array
  */
 
 function sumOfArray(arr) {
-  let temp = 0;
-  arr.forEach(e => {
-    temp += e 
-  })
-  return temp;
+  return arr.reduce((prev, curr) => prev + curr, 0);
 }
 
-console.log(sumOfArray([3, 0, 9])) // expected output: 12
-console.log(sumOfArray([12, 8, 4, 9])) // expected output: 33
-console.log(sumOfArray([8])) // expected output: 8
-console.log(sumOfArray([])) // expected output: 0
-
+console.log(sumOfArray([3, 0, 9])); // expected output: 12
+console.log(sumOfArray([12, 8, 4, 9])); // expected output: 33
+console.log(sumOfArray([8])); // expected output: 8
+console.log(sumOfArray([])); // expected output: 0
 
 /**
  * SOAL NO. 7
  */
-
 
 /**
  * Lengkapi function berikut untuk menambah 1 setiap elemen yang ada di dalam array
@@ -525,19 +498,18 @@ function plusOne(arr) {
   return temp;
 }
 
-console.log(plusOne([3, 6, 7])) // expected output: [4, 7, 8]
-console.log(plusOne([0, 8, 9])) // expected output: [1, 9, 10]
-console.log(sumOfArray([])) // expected output: []
-
+console.log(plusOne([3, 6, 7])); // expected output: [4, 7, 8]
+console.log(plusOne([0, 8, 9])); // expected output: [1, 9, 10]
+console.log(sumOfArray([])); // expected output: []
 
 /**
  * SOAL NO. 8
  */
 
-
 /**
  * Lengkapi function berikut untuk menggabungkan array-array
  */
+
 function joinArray(arr1, arr2, arr3) {
   return arr1.concat(arr2).concat(arr3)
 }
@@ -546,7 +518,6 @@ console.log(joinArray([1, 2], [3, 4], [8])) // expected output: [1, 2, 3, 4, 8]
 console.log(joinArray([9], [8])) // expected output: [9, 8]
 console.log(joinArray([], [8, 2], [6, 4])) // expected output: [8, 2, 6, 4]
 
-
 /**
  * SOAL NO. 9
  */
@@ -554,7 +525,6 @@ console.log(joinArray([], [8, 2], [6, 4])) // expected output: [8, 2, 6, 4]
 /**
  * Lengkapilah function berikut untuk menghitung harga setelah didiskon
  */
-
 
 function countDiscount(harga_awal, persen_diskon) {
     let diskon = +harga_awal * +persen_diskon / 100;
