@@ -471,12 +471,13 @@ console.log(iLoveFruit('Banana'))
  * Lengkapi function untuk menghilangkan nama buah-buahan yang dimulai dengan huruf A
  */
 function removeFruitStartWithALetter(fruits) {
-
+  fruits.shift()
+  return fruits
 }
 
 console.log(removeFruitStartWithALetter(["Apple", "Banana"])) // expected output: ["Banana"]
 console.log(removeFruitStartWithALetter(["Anggur"])) // expected output: []
-console.log(removeFruitStartWithALetter("Mengkudu", "Pisang")) // expected output: ["Mengkudu", "Pisang"]
+console.log(removeFruitStartWithALetter(["Mengkudu", "Pisang"])) // expected output: ["Mengkudu", "Pisang"]
 
 /**
  * sample input: ["Apple", "Orange", "Banana"]
@@ -495,7 +496,11 @@ console.log(removeFruitStartWithALetter("Mengkudu", "Pisang")) // expected outpu
  */
 
 function sumOfArray(arr) {
-
+  let temp = 0;
+  arr.forEach(e => {
+    temp += e 
+  })
+  return temp;
 }
 
 console.log(sumOfArray([3, 0, 9])) // expected output: 12
@@ -513,7 +518,11 @@ console.log(sumOfArray([])) // expected output: 0
  * Lengkapi function berikut untuk menambah 1 setiap elemen yang ada di dalam array
  */
 function plusOne(arr) {
-
+  let temp = [];
+  arr.forEach(e => {
+    temp.push(e+1);
+  })
+  return temp;
 }
 
 console.log(plusOne([3, 6, 7])) // expected output: [4, 7, 8]
@@ -530,7 +539,7 @@ console.log(sumOfArray([])) // expected output: []
  * Lengkapi function berikut untuk menggabungkan array-array
  */
 function joinArray(arr1, arr2, arr3) {
-
+  return arr1.concat(arr2).concat(arr3)
 }
 
 console.log(joinArray([1, 2], [3, 4], [8])) // expected output: [1, 2, 3, 4, 8]
