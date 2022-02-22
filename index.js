@@ -66,12 +66,12 @@ student_tidak_lulus_kelas_A = kelasA.filter((student) => student.nilai <= 70);
 
 let student_tidak_lulus_kelas_B;
 student_tidak_lulus_kelas_B = kelasB.filter(
-  (student) => student.kelas === "12-IPA-B" && student.nilai <= 70
+  (student) =>  student.nilai <= 70
 );
 
 let student_tidak_lulus_kelas_C;
 student_tidak_lulus_kelas_C = kelasC.filter(
-  (student) => student.kelas === "12-IPA-C" && student.nilai <= 70
+  (student) =>  student.nilai <= 70
 );
 
 /**
