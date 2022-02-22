@@ -33,6 +33,18 @@
 
 let nilai_student;
 
+nilai_student = [
+  {nama : 'Andi', kelas: '12-IPA-A' , nilai : 90},
+  {nama : 'Dila', kelas: '12-IPA-A' , nilai : 35},
+  {nama : 'Udin', kelas: '12-IPA-A' , nilai : 67},
+  {nama : 'Nina', kelas: '12-IPA-B' , nilai : 80},
+  {nama : 'Nani', kelas: '12-IPA-B' , nilai : 73},
+  {nama : 'Jali', kelas: '12-IPA-B' , nilai : 98},
+  {nama : 'Farah', kelas: '12-IPA-C' , nilai : 76},
+  {nama : 'Dini', kelas: '12-IPA-C' , nilai : 81},
+  {nama : 'Dina', kelas: '12-IPA-C' , nilai : 87},
+]
+
 console.log(nilai_student)
 
 
@@ -43,10 +55,24 @@ console.log(nilai_student)
  * 
  */
 
-let student_tidak_lulus_kelas_A;
-let student_tidak_lulus_kelas_B;
-let student_tidak_lulus_kelas_C;
+// Filter by class
+let kelasA = nilai_student.filter((student) => student.kelas === "12-IPA-A");
+let kelasB = nilai_student.filter((student) => student.kelas === "12-IPA-B");
+let kelasC = nilai_student.filter((student) => student.kelas === "12-IPA-C");
 
+
+let student_tidak_lulus_kelas_A;
+student_tidak_lulus_kelas_A = kelasA.filter((student) => student.nilai <= 70);
+
+let student_tidak_lulus_kelas_B;
+student_tidak_lulus_kelas_B = kelasB.filter(
+  (student) => student.kelas === "12-IPA-B" && student.nilai <= 70
+);
+
+let student_tidak_lulus_kelas_C;
+student_tidak_lulus_kelas_C = kelasC.filter(
+  (student) => student.kelas === "12-IPA-C" && student.nilai <= 70
+);
 
 /**
  * 
@@ -56,8 +82,14 @@ let student_tidak_lulus_kelas_C;
  */
 
 let rata_rata_kelas_A;
+rata_rata_kelas_A =
+  kelasA.reduce((prev, curr) => prev + curr.nilai, 0) / kelasA.length;
 let rata_rata_kelas_B;
+rata_rata_kelas_B =
+  kelasB.reduce((prev, curr) => prev + curr.nilai, 0) / kelasA.length;
 let rata_rata_kelas_C;
+rata_rata_kelas_C =
+  kelasC.reduce((prev, curr) => prev + curr.nilai, 0) / kelasC.length;
  
 
 
@@ -365,19 +397,22 @@ let rata_rata_kelas_C;
 
 
 // Nama company dari Glenna Reichert
-console.log(users[]) // lengkapi
+console.log(users[8]["company"]["name"]) // lengkapi
 
 // Aktivitas tidak produktif Ervin Howell yang dilakukan tiap Jumat
-console.log(users[])
+console.log(users[1]["activities"][1]["activities"][2]["name"])
 
 // Zipcode dari Ervin Howell
-console.log(users[])
+console.log(users[1]["address"]["zipcode"])
 
 // Leanne Graham melakukan coding setiap hari apa?
-console.log(users[])
+console.log(users[0]["activities"][0]["activities"][1]["day"]);
 
 // Geolocation (latitude, longitude) dari alamat Clementina DuBuque adalah
-console.log(users[], users[])
+console.log(
+  users[2]["address"]["geo"]["lat"],
+  users[2]["address"]["geo"]["lng"]
+);
 
 
 
