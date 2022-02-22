@@ -33,7 +33,20 @@
 
 let nilai_student;
 
-console.log(nilai_student)
+nilai_student = [
+  {nama : 'Andi', kelas: '12-IPA-A' , nilai : 90},
+  {nama : 'Dila', kelas: '12-IPA-A' , nilai : 35},
+  {nama : 'Udin', kelas: '12-IPA-A' , nilai : 67},
+  {nama : 'Nina', kelas: '12-IPA-B' , nilai : 80},
+  {nama : 'Nani', kelas: '12-IPA-B' , nilai : 73},
+  {nama : 'Jali', kelas: '12-IPA-B' , nilai : 98},
+  {nama : 'Farah', kelas: '12-IPA-C' , nilai : 76},
+  {nama : 'Dini', kelas: '12-IPA-C' , nilai : 81},
+  {nama : 'Dina', kelas: '12-IPA-C' , nilai : 87},
+];
+
+
+console.log(nilai_student);
 
 
 /**
@@ -43,9 +56,16 @@ console.log(nilai_student)
  * 
  */
 
+let kelasA = nilai_student.filter((student) => student.kelas === "12-IPA-A");
+let kelasB = nilai_student.filter((student) => student.kelas === "12-IPA-B");
+let kelasC = nilai_student.filter((student) => student.kelas === "12-IPA-C");
+
 let student_tidak_lulus_kelas_A;
+student_tidak_lulus_kelas_A = kelasA.filter((student) => student.nilai <= 70);
 let student_tidak_lulus_kelas_B;
+student_tidak_lulus_kelas_B = kelasB.filter((student) => student.nilai <= 70);
 let student_tidak_lulus_kelas_C;
+student_tidak_lulus_kelas_C = kelasC.filter((student) => student.nilai <= 70);
 
 
 /**
@@ -56,9 +76,14 @@ let student_tidak_lulus_kelas_C;
  */
 
 let rata_rata_kelas_A;
+rata_rata_kelas_A =
+  kelasA.reduce((prev, curr) => prev + curr.nilai, 0) / kelasA.length;
 let rata_rata_kelas_B;
+rata_rata_kelas_B =
+  kelasB.reduce((prev, curr) => prev + curr.nilai, 0) / kelasB.length;
 let rata_rata_kelas_C;
- 
+rata_rata_kelas_C =
+  kelasC.reduce((prev, curr) => prev + curr.nilai, 0) / kelasC.length;
 
 
 /**
