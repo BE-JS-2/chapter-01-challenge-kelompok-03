@@ -391,8 +391,10 @@ console.log(users[], users[])
  */
 
 
- function convertTime(seconds) {
-
+function convertTime(seconds) {
+  let menit = Math.floor(seconds/60)
+  let detik = seconds%60
+  return menit + ':' + detik
 }
 
 
@@ -413,9 +415,13 @@ console.log(convertTime(153)) // expected output: 02:33
 
 
 function iLoveFruit(fruits) {
-
+  let txt = 'I Love ' + fruits 
+  return txt
 }
 
+console.log(iLoveFruit('Apple'))
+console.log(iLoveFruit('Orange'))
+console.log(iLoveFruit('Banana'))
 
 /**
  * sample input: ["Apple", "Orange", "Banana"]
